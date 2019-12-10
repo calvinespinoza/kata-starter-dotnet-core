@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace Kata
 {
@@ -11,7 +12,10 @@ namespace Kata
                 return 0;
             }
 
-            return Convert.ToInt32(number);
+            var nums = number.Split(",").Select(int.Parse).ToArray();
+            if (nums.Length == 1)
+                return nums[0];
+            return nums[0] + nums[1];
         }
     }
 }
