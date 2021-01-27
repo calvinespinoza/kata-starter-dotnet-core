@@ -19,6 +19,9 @@ namespace Kata
                 content = parts[1];
             }
             var numbers = content.Split(delimiters, StringSplitOptions.None).Select(int.Parse);
+            var negative = numbers.FirstOrDefault(x => x < 0);
+            if (negative != 0)
+                throw new Exception($"negatives not allowed: {negative}");
             return numbers.Sum();
         }
     }
