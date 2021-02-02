@@ -12,3 +12,4 @@ _ReSharper*/
 .idea/
 
 node_modules
+global.json
